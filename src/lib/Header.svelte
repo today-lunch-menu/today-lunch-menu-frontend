@@ -1,4 +1,6 @@
 <script lang="ts">
 </script>
 
-<header>오늘의 식사 메뉴</header>
+<header>
+    <a href="/">오늘의 식사 메뉴</a>
+</header>
