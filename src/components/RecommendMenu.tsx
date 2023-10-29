@@ -1,14 +1,14 @@
 import Button from './ui/Button';
 import Section from './ui/Section';
 
-type RecommendProps = {
+type RecommendMenuProps = {
   reason: string;
   menu: string;
 };
 
-export default function Recommend({ reason, menu }: RecommendProps) {
+export default function RecommendMenu({ reason, menu }: RecommendMenuProps) {
   return (
-    <Section>
+    <Section index={0}>
       <div className="flex flex-col gap-8 items-center mx-auto max-w-xl text-center">
         <div>
           <h1 className="text-2xl font-bold sm:text-4xl">오늘 점심 {reason}</h1>
