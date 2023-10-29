@@ -16,13 +16,5 @@ export default function KakaoMap() {
     const map = new window.kakao.maps.Map(container, options);
   }, []);
 
-  return (
-    <div
-      id="map"
-      style={{
-        width: '500px',
-        height: '500px',
-      }}
-    />
-  );
+  return <div id="map" className="w-full h-[400px]" />;
 }
