@@ -1,6 +1,6 @@
 type SectionProps = {
   index: number;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 export default function Section({ index, children }: SectionProps) {
