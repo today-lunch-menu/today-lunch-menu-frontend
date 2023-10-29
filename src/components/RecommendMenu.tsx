@@ -28,7 +28,7 @@ export default function RecommendMenu({ reason, menu }: RecommendMenuProps) {
 
         <div className="flex flex-wrap justify-center gap-4">
           <Button title="좋아요!" color="blue" />
-          <Button title="다른거 먹을래요..." color="transparent" />
+          <Button title="다른거 먹을래요..." color="red" />
         </div>
       </div>
     </Section>
