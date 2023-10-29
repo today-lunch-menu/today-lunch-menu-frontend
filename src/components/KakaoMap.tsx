@@ -33,7 +33,7 @@ export default function KakaoMap() {
     <Map id="map" center={LatLng} className="w-full h-[350px]" level={2}>
       <CustomOverlayMap position={LatLng}>
         {ready && (
-          <div className="rounded-lg px-2 py-1 text-sm bg-white shadow-inner ring-1 ring-black/5">
+          <div className="rounded-lg px-2 py-1 text-sm font-semibold bg-white shadow-inner ring-1 ring-black/5">
             현위치
           </div>
         )}
