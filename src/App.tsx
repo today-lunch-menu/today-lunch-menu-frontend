@@ -1,13 +1,22 @@
+import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import RecommendMenu from './components/RecommendMenu';
 import FindRestaurants from './components/FindRestaurants';
 
 export default function App() {
+  const [reason, setReason] = useState<string>('');
+  const [menu, setMenu] = useState<string>('');
+
+  useEffect(() => {
+    setReason('비오니까');
+    setMenu('떡볶이');
+  }, []);
+
   return (
     <>
       <Navbar />
-      <RecommendMenu reason="비오니까" menu="돼지국밥" />
-      <FindRestaurants menu="돼지국밥" />
+      <RecommendMenu reason={reason} menu={menu} />
+      <FindRestaurants menu={menu} />
     </>
   );
 }
