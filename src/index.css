@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  font-family: 'Pretendard';
+  font-family: 'Pretendard', Arial, Helvetica, sans-serif;
 }
 
 @font-face {
