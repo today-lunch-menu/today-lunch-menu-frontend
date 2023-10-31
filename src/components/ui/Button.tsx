@@ -1,12 +1,14 @@
 type ButtonProps = {
   title: string;
   color: string;
+  onClick?: () => void;
   disabled?: boolean;
 };
 
 export default function Button({
   title,
   color,
+  onClick,
   disabled = false,
 }: ButtonProps) {
   const colorVariants: { [key: string]: string } = {
@@ -22,7 +24,7 @@ export default function Button({
   const classes = `${colorVariants[color]} block w-full rounded px-12 py-3 text-sm font-medium shadow focus:outline-none focus:ring sm:w-auto`;
 
   return (
-    <button className={classes} disabled={disabled}>
+    <button className={classes} onClick={onClick} disabled={disabled}>
       {title}
     </button>
   );
