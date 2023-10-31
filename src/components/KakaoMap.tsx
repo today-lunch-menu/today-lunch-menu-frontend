@@ -45,7 +45,7 @@ export default function KakaoMap({ keyword }: KakaoMapProps) {
           setReady(true);
         },
         () => alert('위치 정보를 가져올 수 없습니다.'),
-        { enableHighAccuracy: true, maximumAge: 0, timeout: Infinity }
+        { enableHighAccuracy: true, maximumAge: 0, timeout: Infinity },
       );
     }
   }, []);
@@ -79,7 +79,7 @@ export default function KakaoMap({ keyword }: KakaoMapProps) {
         location: new window.kakao.maps.LatLng(LatLng.lat, LatLng.lng),
         radius: 3000,
         sort: kakao.maps.services.SortBy.DISTANCE,
-      }
+      },
     );
   }, [keyword, map, ready, LatLng]);
 
@@ -87,7 +87,7 @@ export default function KakaoMap({ keyword }: KakaoMapProps) {
     <Map
       id="map"
       center={LatLng}
-      className="w-full h-[350px]"
+      className="h-[350px] w-full"
       level={2}
       onCreate={setMap}
     >
@@ -104,7 +104,7 @@ export default function KakaoMap({ keyword }: KakaoMapProps) {
       ))}
       <CustomOverlayMap position={LatLng}>
         {ready && (
-          <div className="rounded-lg px-2 py-1 text-sm font-semibold bg-white shadow-inner ring-1 ring-black/5">
+          <div className="rounded-lg bg-white px-2 py-1 text-sm font-semibold shadow-inner ring-1 ring-black/5">
             현위치
           </div>
         )}
