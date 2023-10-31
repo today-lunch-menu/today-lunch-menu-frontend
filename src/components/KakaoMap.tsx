@@ -29,7 +29,7 @@ export default function KakaoMap({ keyword }: KakaoMapProps) {
     lng: 126.570667,
   });
   const [map, setMap] = useState<kakao.maps.Map>();
-  const [ready, setReady] = useState<boolean>(false);
+  const [ready, setReady] = useState(false);
 
   const [markers, setMarkers] = useState<Marker[]>([]);
   const [info, setInfo] = useState<Marker>();
