@@ -84,31 +84,39 @@ export default function KakaoMap({ keyword }: KakaoMapProps) {
   }, [keyword, map, ready, LatLng]);
 
   return (
-    <Map
-      id="map"
-      center={LatLng}
-      className="h-[350px] w-full"
-      level={2}
-      onCreate={setMap}
-    >
-      {markers.map((marker) => (
-        <MapMarker
-          key={`marker-${marker.content}-${marker.position.lat},${marker.position.lng}`}
-          position={marker.position}
-          onClick={() => setInfo(marker)}
+    <>
+      {loading ? (
+        <div>로딩중...</div>
+      ) : error ? (
+        <div>로딩중 에러가 발생했습니다.</div>
+      ) : (
+        <Map
+          id="map"
+          center={LatLng}
+          className="h-[350px] w-full"
+          level={2}
+          onCreate={setMap}
         >
-          {info && info.content === marker.content && (
-            <div style={{ color: '#000' }}>{marker.content}</div>
-          )}
-        </MapMarker>
-      ))}
-      <CustomOverlayMap position={LatLng}>
-        {ready && (
-          <div className="rounded-lg bg-white px-2 py-1 text-sm font-semibold shadow-inner ring-1 ring-black/5">
-            현위치
-          </div>
-        )}
-      </CustomOverlayMap>
-    </Map>
+          {markers.map((marker) => (
+            <MapMarker
+              key={`marker-${marker.content}-${marker.position.lat},${marker.position.lng}`}
+              position={marker.position}
+              onClick={() => setInfo(marker)}
+            >
+              {info && info.content === marker.content && (
+                <div style={{ color: '#000' }}>{marker.content}</div>
+              )}
+            </MapMarker>
+          ))}
+          <CustomOverlayMap position={LatLng}>
+            {ready && (
+              <div className="rounded-lg bg-white px-2 py-1 text-sm font-semibold shadow-inner ring-1 ring-black/5">
+                현위치
+              </div>
+            )}
+          </CustomOverlayMap>
+        </Map>
+      )}
+    </>
   );
 }
