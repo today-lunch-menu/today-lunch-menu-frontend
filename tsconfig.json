@@ -21,8 +21,14 @@
     "noFallthroughCasesInSwitch": true,
 
     /* Type checking */
-    "types": ["kakao.maps.d.ts"]
+    "types": ["kakao.maps.d.ts"],
+
+    "paths": {
+      "@/components": ["./src/components"],
+      "@/data": ["./src/data"]
+    }
   },
   "include": ["src"],
+  "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

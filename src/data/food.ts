@@ -1,15 +1,17 @@
-import { culinaryCulture } from "./culinary-culture";
-import { emotion } from "./emotion";
-import { weather } from "./weather";
+import { culinaryCulture } from './culinary-culture';
+import { emotion } from './emotion';
+import { weather } from './weather';
 
-type WeatherKeys = keyof typeof weather; 
+type WeatherKeys = keyof typeof weather;
 type WeatherKeyMap = { [K in WeatherKeys]: K };
 
-const foodKeys:WeatherKeyMap = (Object.keys(weather) as WeatherKeys[]).reduce((acc, key) => {
-  (acc as any)[key] = key;
-
-  return acc;
-}, {} as WeatherKeyMap);
+const foodKeys = (Object.keys(weather) as WeatherKeys[]).reduce(
+  <K extends WeatherKeys>(acc: { [P in K]: P }, key: K) => {
+    acc[key] = key;
+    return acc;
+  },
+  {} as WeatherKeyMap,
+);
 
 export const food: Record<WeatherKeys, any[]> = {
   [foodKeys.sunny]: [],
@@ -23,4 +25,4 @@ export const food: Record<WeatherKeys, any[]> = {
   [foodKeys.thunderstorm]: [],
   [foodKeys.fog]: [],
   [foodKeys.yellowDust]: [],
-}
+};
