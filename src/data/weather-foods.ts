@@ -1,5 +1,4 @@
 import { korean, western, japanese, chinese, asian } from './culture-food';
-import { emotion } from './emotion';
 import { weather } from './weather';
 
 type WeatherKeys = keyof typeof weather;
@@ -13,7 +12,7 @@ const foodKeys = (Object.keys(weather) as WeatherKeys[]).reduce(
   {} as WeatherKeyMap,
 );
 
-const food = {
+const weatherFoods = {
   [foodKeys.sunny]: [
     korean['돼지국밥'],
     korean['순대국밥'],
@@ -120,4 +119,4 @@ const food = {
   [foodKeys.yellowDust]: [korean['돼지국밥'], korean['순대국밥']],
 };
 
-export default food;
+export default weatherFoods;

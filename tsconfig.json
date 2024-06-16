@@ -25,10 +25,10 @@
 
     "paths": {
       "@/components": ["./src/components"],
-      "@/data": ["./src/data"]
+      "@/data": ["src/data"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "src/data"],
   "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
