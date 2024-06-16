@@ -44,7 +44,7 @@ export default function KakaoMap({ keyword }: KakaoMapProps) {
           });
           setReady(true);
         },
-        () => alert('위치 정보를 가져올 수 없습니다.'),
+        () => {},
         { enableHighAccuracy: true, maximumAge: 0, timeout: Infinity },
       );
     }

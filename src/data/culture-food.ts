@@ -11,7 +11,7 @@ const korean = {
   ['닭개장']: { image: '' },
   ['동래파전']: { image: '' },
   ['밀면']: { image: '' },
-  ['떡볶이']: { image: '' },
+  ['떡볶이']: { image: '/images/떡볶이.jpg' },
   ['김밥']: { image: '' },
   ['참치김밥']: { image: '' },
   ['제육볶음']: { image: '' },
@@ -69,19 +69,21 @@ const korean = {
   ['닭강정']: { image: '' },
   ['김치피자탕수육']: { image: '' },
   ['한식 카레']: { image: '' },
-  ['감자 수제비']: { image: '' },
+  ['감자수제비']: { image: '' },
   ['감자전']: { image: '' },
 } as const;
 
 const western = {
+  ['피자']: { image: '' },
+  ['햄버거']: { image: '' },
+  ['수제 버거']: { image: '' },
+  ['버거킹 주니어와퍼']: { image: '' },
+  ['치킨']: { image: '' },
   ['치즈 토스트']: { image: '' },
   ['비프 부르기뇽']: { image: '' },
   ['닭가슴살 샐러드']: { image: '' },
   ['연어 샐러드']: { image: '' },
   ['우삼겹 샐러드']: { image: '' },
-  ['피자']: { image: '' },
-  ['수제 버거']: { image: '' },
-  ['버거킹 주니어와퍼']: { image: '' },
   ['오므라이스']: { image: '' },
   ['햄 샌드위치']: { image: '' },
   ['BLT 샌드위치']: { image: '' },
@@ -121,12 +123,12 @@ const japanese = {
   ['타코야끼']: { image: '' },
   ['가라아게']: { image: '' },
   ['샤브샤브']: { image: '' },
+  ['모츠나베']: { image: '' },
   ['오뎅나베']: { image: '' },
   ['스시 오마카세']: { image: '' },
   ['돈까스 나베']: { image: '' },
   ['나폴리탄 스파게티']: { image: '' },
   ['명란젓 스파게티']: { image: '' },
-  ['모츠나베']: { image: '' },
 } as const;
 
 const chinese = {
@@ -155,5 +157,21 @@ const asian = {
   ['목살 필라프']: { image: '' },
   ['새우 필라프']: { image: '' },
 } as const;
+
+function setName(obj) {
+  const foods = Object.entries(obj);
+
+  for (let i = 0; i < foods.length; i++) {
+    const [key] = foods[i];
+
+    obj[key].name = key;
+  }
+}
+
+setName(korean);
+setName(western);
+setName(japanese);
+setName(chinese);
+setName(asian);
 
 export { korean, western, japanese, chinese, asian };
