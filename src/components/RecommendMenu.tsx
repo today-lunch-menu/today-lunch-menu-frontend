@@ -4,9 +4,14 @@ import Section from './ui/Section';
 type RecommendMenuProps = {
   reason: string;
   menu: string;
+  onClickOtherMenu: () => void;
 };
 
-export default function RecommendMenu({ reason, menu }: RecommendMenuProps) {
+export default function RecommendMenu({
+  reason,
+  menu,
+  onClickOtherMenu,
+}: RecommendMenuProps) {
   return (
     <Section index={0}>
       <div className="mx-auto flex w-full max-w-xl flex-col items-center gap-8 text-center">
@@ -28,7 +33,11 @@ export default function RecommendMenu({ reason, menu }: RecommendMenuProps) {
 
         <div className="flex flex-wrap justify-center gap-4">
           <Button title="좋아요!" color="blue" />
-          <Button title="다른거 먹을래요..." color="red" />
+          <Button
+            title="다른거 먹을래요..."
+            color="red"
+            onClick={onClickOtherMenu}
+          />
         </div>
       </div>
     </Section>

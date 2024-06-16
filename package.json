@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-kakao-maps-sdk": "^1.1.23",
+    "react-kakao-maps-sdk": "^1.1.27",
     "vercel": "^32.5.0"
   },
   "devDependencies": {

@@ -1,9 +1,11 @@
+import type { ButtonHTMLAttributes } from 'react';
+
 type ButtonProps = {
   title: string;
   color: string;
   onClick?: () => void;
   disabled?: boolean;
-};
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export default function Button({
   title,
