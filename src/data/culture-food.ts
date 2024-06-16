@@ -167,7 +167,7 @@ function createFoodRecord<T extends readonly string[]>(
   const foodObj: Record<string, FoodObj> = {};
 
   for (const food of foods) {
-    foodObj[food] = { name: '' };
+    foodObj[food] = { name: food };
   }
 
   return foodObj as FoodRecord<T>;
