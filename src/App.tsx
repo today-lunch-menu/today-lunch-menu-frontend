@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import RecommendMenu from './components/RecommendMenu';
 import FindRestaurants from './components/FindRestaurants';
 
-import foods from './data/food';
+import foods from './data/weather-foods';
 
 export default function App() {
   const [reason, setReason] = useState('');
@@ -18,9 +18,9 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    target.current = foods.rain;
+    target.current = foods.sunny;
 
-    setReason('비오니까');
+    setReason('맑으니까');
   }, []);
 
   useEffect(() => {
