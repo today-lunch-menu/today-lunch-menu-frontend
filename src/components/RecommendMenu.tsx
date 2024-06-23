@@ -32,7 +32,11 @@ export default function RecommendMenu({
         />
 
         <div className="flex flex-wrap justify-center gap-4">
-          <Button title="좋아요!" color="blue" />
+          <Button
+            title="공유하기"
+            color="blue"
+            onClick={() => alert('준비중입니다 ㅠㅠ')}
+          />
           <Button
             title="다른거 먹을래요..."
             color="red"

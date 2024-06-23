@@ -8,6 +8,7 @@ import foods from './data/weather-foods';
 export default function App() {
   const [reason, setReason] = useState('');
   const [menu, setMenu] = useState('');
+  const [keyword, setKeyword] = useState('');
   const [randomCount, setRandomCount] = useState(-1);
   const target = useRef<any[]>(null);
 
@@ -34,6 +35,7 @@ export default function App() {
       const food = target.current[randomCount];
 
       setMenu(food.name);
+      setKeyword(food.keyword);
     }
   }, [randomCount]);
 
@@ -45,7 +47,7 @@ export default function App() {
         menu={menu}
         onClickOtherMenu={onClickOtherMenu}
       />
-      <FindRestaurants menu={menu} />
+      <FindRestaurants menu={keyword} />
     </>
   );
 }

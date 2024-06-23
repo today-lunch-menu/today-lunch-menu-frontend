@@ -34,7 +34,7 @@ const weatherFoods = {
     korean['한식 카레'],
     western['피자'],
     western['햄버거'],
-    western['수제 버거'],
+    western['수제버거'],
     western['버거킹 주니어와퍼'],
     western['치킨'],
     western['코코뱅'],
